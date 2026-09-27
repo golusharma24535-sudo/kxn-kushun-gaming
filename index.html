@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KXN KUSUN GAMING</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">KXN <span>KUSUN</span> GAMING</div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#members">Members</a>
+      <a href="#teams">Teams</a>
+      <a href="#matches">Matches</a>
+      <a href="#videos">Videos</a>
+      <button class="admin-btn" id="adminBtn">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="tag">FREE FIRE COMMUNITY</p>
+        <h1>KXN KUSUN <span>GAMING</span></h1>
+        <p>Build your squad. Manage your members. Play together. Grow together.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#members">View Members</a>
+          <a class="btn" href="#videos">Watch Videos</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="glow"></div>
+        <div class="crosshair">✦</div>
+        <h3>KXN SQUAD</h3>
+        <p>TEAM • SKILL • UNITY</p>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong id="memberCount">0</strong><span>Members</span></div>
+      <div><strong id="teamCount">0</strong><span>Teams</span></div>
+      <div><strong id="matchCount">0</strong><span>Matches</span></div>
+      <div><strong id="videoCount">0</strong><span>Videos</span></div>
+    </section>
+
+    <section class="section" id="members">
+      <div class="section-head">
+        <div>
+          <p class="tag">OUR COMMUNITY</p>
+          <h2>Gaming Members</h2>
+        </div>
+        <input id="searchInput" class="search" type="search" placeholder="Search player...">
+      </div>
+      <div id="memberGrid" class="card-grid"></div>
+    </section>
+
+    <section class="section" id="teams">
+      <div class="section-head">
+        <div>
+          <p class="tag">SQUADS</p>
+          <h2>Our Teams</h2>
+        </div>
+      </div>
+      <div id="teamGrid" class="card-grid"></div>
+    </section>
+
+    <section class="section" id="matches">
+      <div class="section-head">
+        <div>
+          <p class="tag">COMPETITION</p>
+          <h2>Upcoming Matches</h2>
+        </div>
+      </div>
+      <div id="matchGrid" class="match-list"></div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="section-head">
+        <div>
+          <p class="tag">CONTENT</p>
+          <h2>Latest Videos</h2>
+        </div>
+        <a class="btn small" id="youtubeBtn" href="#" target="_blank">YouTube Channel</a>
+      </div>
+      <div id="videoGrid" class="card-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>KXN KUSUN GAMING</h3>
+    <p>© <span id="year"></span> KXN KUSUN GAMING. All rights reserved.</p>
+  </footer>
+
+  <div class="modal" id="adminModal">
+    <div class="modal-box">
+      <button class="close" id="closeAdmin">×</button>
+      <h2>Admin Panel</h2>
+      <p class="muted">Demo admin panel — data is saved in this browser.</p>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="memberTab">Add Member</button>
+        <button class="tab" data-tab="teamTab">Add Team</button>
+        <button class="tab" data-tab="matchTab">Add Match</button>
+        <button class="tab" data-tab="videoTab">Add Video</button>
+      </div>
+
+      <div class="tab-content active" id="memberTab">
+        <form id="memberForm">
+          <input name="name" required placeholder="Player name">
+          <input name="uid" required placeholder="Free Fire UID">
+          <input name="role" required placeholder="Role (Rusher, Sniper...)">
+          <input name="team" required placeholder="Team name">
+          <input name="status" placeholder="Status (Active)">
+          <input name="avatar" placeholder="Avatar image URL (optional)">
+          <button class="btn primary" type="submit">Add Member</button>
+        </form>
+      </div>
+
+      <div class="tab-content" id="teamTab">
+        <form id="teamForm">
+          <input name="name" required placeholder="Team name">
+          <input name="captain" required placeholder="Captain">
+          <input name="players" required placeholder="Players (e.g. 4)">
+          <input name="logo" placeholder="Team logo URL (optional)">
+          <button class="btn primary" type="submit">Add Team</button>
+        </form>
+      </div>
+
+      <div class="tab-content" id="matchTab">
+        <form id="matchForm">
+          <input name="title" required placeholder="Match / Tournament name">
+          <input name="date" required type="date">
+          <input name="time" required type="time">
+          <input name="opponent" required placeholder="Opponent">
+          <input name="mode" placeholder="Mode (Squad / Clash Squad)">
+          <button class="btn primary" type="submit">Add Match</button>
+        </form>
+      </div>
+
+      <div class="tab-content" id="videoTab">
+        <form id="videoForm">
+          <input name="title" required placeholder="Video title">
+          <input name="url" required placeholder="YouTube video URL">
+          <input name="thumb" placeholder="Thumbnail URL (optional)">
+          <button class="btn primary" type="submit">Add Video</button>
+        </form>
+      </div>
+
+      <div class="danger-zone">
+        <button id="resetBtn" class="btn danger">Reset Demo Data</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="profileModal">
+    <div class="modal-box profile-box">
+      <button class="close" id="closeProfile">×</button>
+      <div id="profileContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
